@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif; /* Ensure Poppins font is loaded */
+}
+
+.banner-img {
+  background: url("../../Assets/images/cool-background.png");
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-clip-path: polygon(100% 0, 100% 90%, 0 95%, 0 0);
+  clip-path: polygon(100% 0, 100% 90%, 0 95%, 0 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+  color: #000;
+  padding: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Make sure navbar stays on top */
+}
+
+#navbar ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+#navbar ul li a {
+  color: transparent; /* Fix for link color */
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #6B5DF2 50%, #000 0) var(--_p, 100%) / 200% no-repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: 1s;
+}
+
+#navbar ul li a:hover {
+  --_p: 0%;
+}
+
+.logo > span {
+  color: #f7cc53;
+}
+
+@media (max-width: 640px) {
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #navbar .logo {
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+
+  #navbar ul {
+    padding: 0.5rem;
+  }
+
+  #navbar ul li a {
+    padding: 0.5rem;
+  }
+
+  .banner-img {
+    height: 500px; /* Adjust banner height for mobile screens */
+  }
+
+  .title h3 {
+    font-size: 2rem; /* Reduce font size for smaller screens */
+  }
+}

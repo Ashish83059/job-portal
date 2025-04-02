@@ -1,0 +1,64 @@
+.job-filter {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ Search Section */
+.search-box {
+  margin: 25px 10px 0px 5px;
+  padding: 5px;
+  font-size: 1.2rem;
+}
+.job-search {
+  display: flex;
+  margin-top: 10px;
+}
+.search-term {
+  padding: 10px;
+  width: 100%;
+  max-width: 220px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+/* ✅ Job Category Filters */
+.job-category {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  min-width: 180px;
+}
+.job-category:hover {
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+.job-category > ul {
+  list-style: none;
+  padding: 8px;
+  cursor: pointer;
+}
+.job-category ul > li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  opacity: 0.85;
+  margin-top: 10px;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.job-category ul > li:hover {
+  color: blue;
+  transform: scale(1.05);
+}
+
+/* ✅ Filters Section */
+.filter-page {
+  font-size: 1.5rem;
+}
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
