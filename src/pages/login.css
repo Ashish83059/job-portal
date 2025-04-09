@@ -1,0 +1,77 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #191c29;
+}
+
+.form {
+  background-color: #212121;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 20px #000;
+  width: 300px;
+}
+
+.title {
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+}
+
+.message {
+  color: #aaa;
+  font-size: 0.9rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #2c2f36;
+  color: white;
+}
+
+label {
+  display: block;
+  margin-bottom: 1rem;
+  position: relative;
+  color: white;
+}
+
+label span {
+  position: absolute;
+  left: 10px;
+  top: -10px;
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+.submit {
+  display: block;
+  margin: 20px auto 0; /* Centers the button */
+  padding: 20px 10px;
+  background-color: #22c55e; /* Bright green */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #16a34a; /* Darker green on hover */
+}
+
+
+
+.submit:hover {
+  background-color: #45a049;
+}

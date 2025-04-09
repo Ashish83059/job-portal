@@ -1,33 +1,46 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./index.css";
 
 const Navbar = () => {
-  return (
-    <>
-      <div className="main-page">
-        <nav id="navbar">
-          <h1 className="logo">
-          Career<span>Hunt</span>
-          </h1>
+  const navigate = useNavigate();
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
 
-          <ul>
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate('/login');
+  };
+
+  return (
+    <div className="main-page">
+      <nav id="navbar">
+        <h1 className="logo">
+          Career<span>Hunt</span>
+        </h1>
+
+        <ul>
+          <li>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <Link to="/jobs">Jobs</Link>
+          </li>
+          <li>
+            <Link to="/post-job">Post Job</Link>
+          </li>
+          <li>
+            <Link to="/saved-job">Saved Job</Link>
+          </li>
+          {isLoggedIn && (
             <li>
-              <Link to="/home">Home</Link>
+              <button onClick={handleLogout} className="logout-btn">
+                Logout
+              </button>
             </li>
-            <li>
-              <Link to="/jobs">Jobs</Link>
-            </li>
-            <li>
-              <Link to="/post-job">Post Job</Link>
-            </li>
-            <li>
-              <Link to="/saved-job">Saved Job</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </>
+          )}
+        </ul>
+      </nav>
+    </div>
   );
 };
 
