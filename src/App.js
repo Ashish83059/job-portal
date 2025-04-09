@@ -1,27 +1,63 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";  // ✅ Import Navigate
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
+
 import Home from './components/Home';
 import Jobs from './components/Jobs';
 import PostJob from './components/PostJob';
 import SaveJobs from './components/SaveJobs';
 import Discussion from './components/Discussion';
-// import ErrorPage from './components/ErrorPage';
 import ApplyJobs from './components/ApplyJobs';
+import Dashboard from './components/Dashboard';
+import Login from './pages/login';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/jobs" element={<Jobs />} />
-        <Route path="/post-job" element={<PostJob />} />
-        <Route path="/apply-jobs" element={<ApplyJobs />} />
-        <Route path="/saved-job" element={<SaveJobs />} />
-        <Route path="/discussion" element={<Discussion />} />
+        {/* Login route is public */}
+        <Route path="/login" element={<Login />} />
 
-        {/* If user enters an invalid route, redirect them to Home */}
-        <Route path="*" element={<Navigate to="/" />} /> 
+        {/* All other routes are protected */}
+        <Route path="/" element={
+          <ProtectedRoute>
+            <Home />
+          </ProtectedRoute>
+        } />
+        <Route path="/jobs" element={
+          <ProtectedRoute>
+            <Jobs />
+          </ProtectedRoute>
+        } />
+        <Route path="/post-job" element={
+          <ProtectedRoute>
+            <PostJob />
+          </ProtectedRoute>
+        } />
+        <Route path="/apply-jobs" element={
+          <ProtectedRoute>
+            <ApplyJobs />
+          </ProtectedRoute>
+        } />
+        <Route path="/saved-job" element={
+          <ProtectedRoute>
+            <SaveJobs />
+          </ProtectedRoute>
+        } />
+        <Route path="/discussion" element={
+          <ProtectedRoute>
+            <Discussion />
+          </ProtectedRoute>
+        } />
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        } />
+
+        {/* Catch all other routes */}
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
