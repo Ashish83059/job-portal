@@ -11,3 +11,104 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* Default Light Mode */
+body {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+#navbar {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.3s ease;
+}
+
+#navbar a {
+  color: #000;
+}
+
+/* Dark Mode Base */
+.dark body {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+.dark #navbar {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+.dark #navbar a {
+  color: #f5f5f5;
+}
+
+.dark .logo span {
+  color: #f7cc53;
+}
+
+.dark .logout-btn {
+  background-color: #c62828;
+  color: white;
+}
+
+.dark .logout-btn:hover {
+  background-color: #a81f1f;
+}
+
+.toggle-theme-btn {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-theme-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode styles for job cards, inputs, sidebar, etc */
+.dark .job-box,
+.dark .card,
+.dark .search-bar,
+.dark input,
+.dark textarea,
+.dark select,
+.dark .job-category {
+  background-color: #1f1f1f !important;
+  color: #f5f5f5 !important;
+  border: 1px solid #333 !important;
+}
+
+/* Scrollbar dark */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
+
+/* Company name (e.g., AMAZON, FLP) and tags in job cards */
+.dark .job-box,
+.dark .job-box * {
+  color: #f5f5f5 !important;
+}
+
+/* Optional: Make company name stand out more */
+.dark .job-box .company-name {
+  color: #8ab4f8 !important; /* Light blue for better visibility */
+}
+
+/* Fix tag colors (e.g., Remote, Fullstack) */
+.dark .job-box .tags,
+.dark .job-box .tags * {
+  color: #ccc !important;
+}
